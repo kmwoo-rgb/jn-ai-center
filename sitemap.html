@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사이트맵 | KENTECH 김종권 교수 전남광주지능화혁신연구센터</title>
+  <meta name="description" content="전남광주지능화혁신연구센터 홈페이지의 전체 메뉴를 한눈에 확인하세요.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/kentech_symbol.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .sm-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .sm-group { border: 1px solid #dbe4f0; border-radius: 12px; background: #fff; overflow: hidden; }
+    .sm-group h2 { margin: 0; padding: 16px 20px; background: #0f2d59; color: #fff; font-size: 1.1875rem; font-weight: 800; }
+    .sm-group h2 a { color: inherit; }
+    .sm-group ul { padding: 10px 0; }
+    .sm-group li a { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 20px; color: #334155; font-size: 1.0625rem; }
+    .sm-group li a:hover { background: #eff6ff; color: #1a56db; }
+    .sm-badge { flex-shrink: 0; font-size: 0.75rem; font-weight: 600; color: #94a3b8; border: 1px solid #cbd5e1; border-radius: 999px; padding: 1px 8px; }
+    .sm-etc { margin-top: 28px; }
+    .sm-etc .sm-group ul { display: flex; flex-wrap: wrap; padding: 10px; }
+    .sm-etc .sm-group li a { padding: 8px 14px; }
+    @media (max-width: 1100px) { .sm-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .sm-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body data-qr-desc="스마트폰 카메라로 스캔하여 사이트맵 페이지를 바로 확인하세요.">
+
+  <div id="site-header"></div>
+
+  <section class="sub-hero" aria-label="페이지 헤더 배너">
+    <div class="hero-glow-orb"></div>
+    <div class="container hero-content">
+      <div class="hero-category">AI INNOVATION CENTER · SITEMAP</div>
+      <h1 class="hero-title">사이트맵</h1>
+      <p class="hero-desc">홈페이지의 전체 메뉴를 한눈에 확인하고 바로 이동할 수 있습니다.</p>
+    </div>
+  </section>
+
+  <div id="site-breadcrumb"></div>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="sm-grid" id="smGrid"></div>
+      <div class="sm-etc" id="smEtc"></div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="site-overlays"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var esc = function (s) { return s.replace(/&/g, '&amp;'); };
+      var link = function (c) {
+        var pending = c.href.indexOf('page.html') === 0;
+        return '<li><a href="' + c.href + '"><span>' + esc(c.label) + '</span>' +
+          (pending ? '<span class="sm-badge">작성중</span>' : '') + '</a></li>';
+      };
+
+      document.getElementById('smGrid').innerHTML = window.SITE_MENU.map(function (m) {
+        return '<section class="sm-group"><h2><a href="' + m.children[0].href + '">' + esc(m.label) + '</a></h2><ul>' +
+          m.children.map(link).join('') + '</ul></section>';
+      }).join('');
+
+      var etc = window.SITE_FOOTER_LINKS.filter(function (l) { return l.href.indexOf('sitemap.html') < 0; });
+      document.getElementById('smEtc').innerHTML =
+        '<section class="sm-group"><h2>기타</h2><ul>' + etc.map(link).join('') + '</ul></section>';
+    })();
+  </script>
+</body>
+</html>

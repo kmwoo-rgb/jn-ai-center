@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>작성중 | KENTECH 김종권 교수 전남광주지능화혁신연구센터</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/kentech_symbol.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .pending-box { text-align: center; padding: 100px 20px; border: 1px dashed #cbd5e1; border-radius: 12px; background: #f8fafc; }
+    .pending-box h2 { font-size: 1.75rem; font-weight: 700; color: #0f2d59; margin-bottom: 12px; }
+    .pending-box p { color: #64748b; font-size: 1.05rem; }
+  </style>
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="sub-hero" aria-label="페이지 헤더 배너">
+    <div class="hero-glow-orb"></div>
+    <div class="container hero-content">
+      <div class="hero-category" id="pageCategory">AI INNOVATION CENTER</div>
+      <h1 class="hero-title" id="pageTitle">작성중</h1>
+    </div>
+  </section>
+
+  <div id="site-breadcrumb"></div>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="page-content-layout">
+        <aside class="lnb-sidebar" id="pageLnb" aria-label="하위 메뉴" hidden>
+          <div class="lnb-header"><h3 id="pageLnbTitle"></h3></div>
+          <nav class="lnb-menu"><ul id="pageLnbList"></ul></nav>
+        </aside>
+
+        <div class="content-primary-col">
+          <div class="pending-box">
+            <h2 id="pendingHeading">작성중입니다</h2>
+            <p>해당 페이지의 내용은 현재 작성중입니다. 빠른 시일 내에 공개하겠습니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="site-overlays"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var id = new URLSearchParams(location.search).get('id');
+      var info = (window.SITE_PENDING || {})[id] || { label: '작성중', category: '' };
+      var menu = window.SITE_MENU.find(function (m) {
+        return m.children.some(function (c) { return c.href.toLowerCase() === ('page.html?id=' + id).toLowerCase(); });
+      });
+
+      document.title = info.label + ' | KENTECH 김종권 교수 전남광주지능화혁신연구센터';
+      document.getElementById('pageTitle').textContent = info.label;
+      document.getElementById('pendingHeading').textContent = info.label + ' 페이지는 작성중입니다';
+      if (info.category) document.getElementById('pageCategory').textContent = 'AI INNOVATION CENTER · ' + info.category;
+
+      if (menu) {
+        document.getElementById('pageLnb').hidden = false;
+        document.getElementById('pageLnbTitle').textContent = menu.label;
+        document.getElementById('pageLnbList').innerHTML = menu.children.map(function (c) {
+          var active = c.href.toLowerCase() === ('page.html?id=' + id).toLowerCase();
+          return '<li class="lnb-item"><a href="' + c.href + '" class="lnb-link' + (active ? ' active' : '') + '"><span>' +
+            c.label.replace(/&/g, '&amp;') + '</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>';
+        }).join('');
+      }
+    })();
+  </script>
+</body>
+</html>

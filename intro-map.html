@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오시는 길 | KENTECH 김종권 교수 전남광주지능화혁신연구센터</title>
+  <meta name="description" content="한국에너지공과대학교(KENTECH) 전남광주지능화혁신연구센터 위치 안내입니다.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/kentech_symbol.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-qr-desc="스마트폰 카메라로 스캔하여 오시는 길 페이지를 바로 확인하세요.">
+
+  <div id="site-header"></div>
+
+  <section class="sub-hero" aria-label="페이지 헤더 배너">
+    <div class="hero-glow-orb"></div>
+    <div class="container hero-content">
+      <div class="hero-category">AI INNOVATION CENTER · 센터 소개</div>
+      <h1 class="hero-title">오시는 길</h1>
+      <p class="hero-desc">한국에너지공과대학교(KENTECH) 전남광주지능화혁신연구센터 위치 안내입니다.</p>
+    </div>
+  </section>
+
+  <div id="site-breadcrumb"></div>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="page-content-layout">
+
+        <aside class="lnb-sidebar" id="pageLnb" aria-label="하위 메뉴" hidden>
+          <div class="lnb-header"><h3 id="pageLnbTitle"></h3></div>
+          <nav class="lnb-menu"><ul id="pageLnbList"></ul></nav>
+        </aside>
+
+        <div class="content-primary-col">
+<div class="cp-section">
+<h2>주소</h2>
+<table class="cp-table"><tbody><tr><th>기관</th><td>한국에너지공과대학교 (KENTECH) 에너지공학부</td></tr><tr><th>주소</th><td>전라남도 나주시 켄텍길 21 (우 58330) 한국에너지공과대학교</td></tr></tbody></table><p style="margin-top:20px"><a class="cp-btn" href="https://map.naver.com/p/search/%EC%A0%84%EB%9D%BC%EB%82%A8%EB%8F%84%20%EB%82%98%EC%A3%BC%EC%8B%9C%20%EC%BC%84%ED%85%8D%EA%B8%B8%2021" target="_blank" rel="noopener noreferrer">네이버 지도로 보기</a><a class="cp-btn line" href="https://map.kakao.com/?q=%EC%A0%84%EB%9D%BC%EB%82%A8%EB%8F%84%20%EB%82%98%EC%A3%BC%EC%8B%9C%20%EC%BC%84%ED%85%8D%EA%B8%B8%2021" target="_blank" rel="noopener noreferrer">카카오맵으로 보기</a></p>
+</div>
+<div class="cp-section">
+<p class="cp-note">교통편 등 상세 안내는 준비되는 대로 추가하겠습니다.</p>
+</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="site-overlays"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var file = location.pathname.split('/').pop().toLowerCase();
+      var menu = window.SITE_MENU.find(function (m) {
+        return m.children.some(function (c) { return c.href.toLowerCase() === file; });
+      });
+      if (!menu) return;
+      document.getElementById('pageLnb').hidden = false;
+      document.getElementById('pageLnbTitle').textContent = menu.label;
+      document.getElementById('pageLnbList').innerHTML = menu.children.map(function (c) {
+        var active = c.href.toLowerCase() === file;
+        return '<li class="lnb-item"><a href="' + c.href + '" class="lnb-link' + (active ? ' active' : '') + '"><span>' +
+          c.label.replace(/&/g, '&amp;') + '</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>';
+      }).join('');
+    })();
+  </script>
+</body>
+</html>

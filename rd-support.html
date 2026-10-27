@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기술지원 | KENTECH 김종권 교수 전남광주지능화혁신연구센터</title>
+  <meta name="description" content="지역 산업체의 R&D 문제 해결과 역량 강화를 위한 기술·교육 지원 서비스입니다.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/kentech_symbol.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-qr-desc="스마트폰 카메라로 스캔하여 기술지원 페이지를 바로 확인하세요.">
+
+  <div id="site-header"></div>
+
+  <section class="sub-hero" aria-label="페이지 헤더 배너">
+    <div class="hero-glow-orb"></div>
+    <div class="container hero-content">
+      <div class="hero-category">AI INNOVATION CENTER · 연구개발</div>
+      <h1 class="hero-title">기술지원</h1>
+      <p class="hero-desc">지역 산업체의 R&D 문제 해결과 역량 강화를 위한 기술·교육 지원 서비스입니다.</p>
+    </div>
+  </section>
+
+  <div id="site-breadcrumb"></div>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="page-content-layout">
+
+        <aside class="lnb-sidebar" id="pageLnb" aria-label="하위 메뉴" hidden>
+          <div class="lnb-header"><h3 id="pageLnbTitle"></h3></div>
+          <nav class="lnb-menu"><ul id="pageLnbList"></ul></nav>
+        </aside>
+
+        <div class="content-primary-col">
+<div class="cp-section">
+<h2>지원 서비스</h2>
+<div class="cp-grid "><div class="cp-card"><div class="no">01</div><h3>기술개발·교육 컨설팅</h3><p>지역 산업체의 R&D 문제와 교육 수요에 대응하는 컨설팅 서비스를 제공합니다.</p></div><div class="cp-card"><div class="no">02</div><h3>단기강좌</h3><p>하계·동계 방학 중 각 1회, &ldquo;프로젝트 수행&rdquo; 오프라인 단기강좌(1주일 15시간)를 운영합니다. 기업 수요에 따라 횟수를 확대합니다.</p></div><div class="cp-card"><div class="no">03</div><h3>온라인 공개강좌</h3><p>대학원에 재학하지 않아도 수강할 수 있는 공개강좌를 5과목 이상 제공하고, 모든 강의 영상과 자료를 무료로 공개합니다. 2단계에서 10개 강좌로 확대합니다.</p></div><div class="cp-card"><div class="no">04</div><h3>멘토링</h3><p>멘토링 필요성, 분야, 기간을 온라인으로 신청할 수 있는 시스템을 구축하여 멘토-멘티 매칭을 신속하게 지원합니다.</p></div><div class="cp-card"><div class="no">05</div><h3>졸업 후 기술지원</h3><p>재직자 졸업생이 소속 기업의 연구개발을 주도할 수 있도록 졸업 후에도 지속적인 기술지원과 협업연구를 수행합니다.</p></div><div class="cp-card"><div class="no">06</div><h3>기술사업화·창업</h3><p>공동 특허 출원, 기술이전, 연구소기업 설립과 창업 전주기(아이디어→시제품→사업화→투자→성장)를 지원합니다.</p></div></div>
+</div>
+<div class="cp-section">
+<h2>연구 인프라</h2>
+<p class="cp-lead">AI 모델 학습용 GPU 서버, 실시간 전력계통 시뮬레이터 등 대학의 연구 인프라를 지역 산업체에 개방하는 것을 추진합니다.</p><p><a class="cp-btn" href="equipment-apply.html">보유 장비 보기</a></p>
+</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="site-overlays"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var file = location.pathname.split('/').pop().toLowerCase();
+      var menu = window.SITE_MENU.find(function (m) {
+        return m.children.some(function (c) { return c.href.toLowerCase() === file; });
+      });
+      if (!menu) return;
+      document.getElementById('pageLnb').hidden = false;
+      document.getElementById('pageLnbTitle').textContent = menu.label;
+      document.getElementById('pageLnbList').innerHTML = menu.children.map(function (c) {
+        var active = c.href.toLowerCase() === file;
+        return '<li class="lnb-item"><a href="' + c.href + '" class="lnb-link' + (active ? ' active' : '') + '"><span>' +
+          c.label.replace(/&/g, '&amp;') + '</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>';
+      }).join('');
+    })();
+  </script>
+</body>
+</html>

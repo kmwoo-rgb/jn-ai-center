@@ -1,0 +1,18 @@
+# 신청자 시트 링크·스크립트 ID 등이 들어 있어 공개 저장소에 올리지 않음 (홈페이지 동작에는 필요 없음)
+server/
+
+# 메뉴에서 연결되지 않는 이전 강의 소개 페이지 (로컬에만 보관)
+lecture.html
+
+# 연구진 명단은 공개하지 않음 (메뉴에서는 "준비 중" 페이지로 연결)
+intro-org.html
+
+# Claude Code 개인 설정
+.claude/
+
+# 편집기·OS 파일
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store

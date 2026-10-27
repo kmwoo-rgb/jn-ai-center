@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>산학협력 | KENTECH 김종권 교수 전남광주지능화혁신연구센터</title>
+  <meta name="description" content="지자체·산업체·학계가 함께하는 지역혁신양성협의체로 지역산업 혁신을 이끕니다.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/kentech_symbol.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-qr-desc="스마트폰 카메라로 스캔하여 산학협력 페이지를 바로 확인하세요.">
+
+  <div id="site-header"></div>
+
+  <section class="sub-hero" aria-label="페이지 헤더 배너">
+    <div class="hero-glow-orb"></div>
+    <div class="container hero-content">
+      <div class="hero-category">AI INNOVATION CENTER · 연구개발</div>
+      <h1 class="hero-title">산학협력</h1>
+      <p class="hero-desc">지자체·산업체·학계가 함께하는 지역혁신양성협의체로 지역산업 혁신을 이끕니다.</p>
+    </div>
+  </section>
+
+  <div id="site-breadcrumb"></div>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="page-content-layout">
+
+        <aside class="lnb-sidebar" id="pageLnb" aria-label="하위 메뉴" hidden>
+          <div class="lnb-header"><h3 id="pageLnbTitle"></h3></div>
+          <nav class="lnb-menu"><ul id="pageLnbList"></ul></nav>
+        </aside>
+
+        <div class="content-primary-col">
+<div class="cp-section">
+<h2>지역혁신양성협의체</h2>
+<p class="cp-lead">지자체, 지역산업체, 학계로 구성된 종합 협의체를 운영하여 산업 수요 발굴, 교육과정 개선, 연구과제 기획, 성과 확산 전략을 함께 논의합니다.</p><table class="cp-table"><tbody><tr><th>구성</th><td>지자체 2명, 분야별 산업체 대표, 지역 TP센터장급 2명, 학계 3명 등</td></tr><tr><th>운영</th><td>연구책임자가 회장, 산학협력중점교수가 간사를 맡으며 분기별 정기회의와 수시 회의 개최</td></tr><tr><th>분과</th><td>에너지시스템, 에너지소재, 모빌리티, 스마트팜 분야별 실무 협의체 및 워킹그룹</td></tr><tr><th>환류</th><td>협의 결과를 교육과정과 산학 프로젝트에 즉시 반영</td></tr></tbody></table>
+</div>
+<div class="cp-section">
+<h2>협력 프로그램</h2>
+<div class="cp-grid "><div class="cp-card"><div class="no">01</div><h3>연구 성과 공유·확산</h3><p>우수 DX/AX 혁신사례를 발굴하고 기술세미나·워크숍·포럼으로 공유합니다. 매년 1회 정기 워크숍을 개최합니다.</p></div><div class="cp-card"><div class="no">02</div><h3>멘토링·메이커톤</h3><p>기업이 제시한 실제 문제를 바탕으로 산업체 전문가, 공공기관 연구자, 대학 교원이 함께 멘토링하고 메이커톤을 매년 개최합니다.</p></div><div class="cp-card"><div class="no">03</div><h3>취업 연계·인재 활용</h3><p>인턴십, 현장실습, 채용연계형 프로젝트와 취업박람회·기업설명회로 지역 인재의 지역 내 정착을 돕습니다.</p></div></div>
+</div>
+<div class="cp-section">
+<h2>성과관리와 지속가능성</h2>
+<p class="cp-lead">협의체 운영 결과와 프로그램 성과를 정량·정성 지표로 관리하고 평가위원회를 통해 정기적으로 점검·환류합니다. 우수 성과는 기술사업화, 창업, 정책 반영으로 연계하여 지역 중심의 지속가능한 지능화 생태계로 발전시킵니다.</p>
+</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="site-overlays"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var file = location.pathname.split('/').pop().toLowerCase();
+      var menu = window.SITE_MENU.find(function (m) {
+        return m.children.some(function (c) { return c.href.toLowerCase() === file; });
+      });
+      if (!menu) return;
+      document.getElementById('pageLnb').hidden = false;
+      document.getElementById('pageLnbTitle').textContent = menu.label;
+      document.getElementById('pageLnbList').innerHTML = menu.children.map(function (c) {
+        var active = c.href.toLowerCase() === file;
+        return '<li class="lnb-item"><a href="' + c.href + '" class="lnb-link' + (active ? ' active' : '') + '"><span>' +
+          c.label.replace(/&/g, '&amp;') + '</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>';
+      }).join('');
+    })();
+  </script>
+</body>
+</html>
