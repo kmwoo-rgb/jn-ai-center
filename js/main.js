@@ -153,7 +153,8 @@ function initModals() {
   });
 
   // Open Enrollment modal
-  const enrollTriggers = [btnEnrollHeader, btnEnrollBanner];
+  // 본문 버튼은 data-open-enroll 속성만 달면 신청 창을 연다.
+  const enrollTriggers = [btnEnrollHeader, btnEnrollBanner, ...document.querySelectorAll('[data-open-enroll]')];
   enrollTriggers.forEach((btn) => {
     if (btn && enrollModal) {
       btn.addEventListener('click', (e) => {

@@ -96,9 +96,9 @@
   // 내용이 작성된 페이지: '#앵커' id -> 실제 파일
   const READY = [
     'rd-overview', 'rd-coop', 'rd-support', 'rd-results',
-    'intro-faculty', 'intro-map', // intro-org(연구진 명단)는 비공개라 "작성중" 페이지로 연결
+    'intro-faculty', 'intro-org', 'intro-map',
     'prog-nondegree', 'prog-joint', 'prog-survey',
-    'partner-info', 'equipment-apply', 'sitemap',
+    'partner-info', 'equipment-apply', 'sitemap', 'notice',
   ].reduce((o, id) => ((o[id] = `${id}.html`), o), {});
   const pendingHref = (href) => {
     if (href.charAt(0) !== '#') return href;
@@ -125,7 +125,9 @@
   /* ------------------------------------------------------------------ */
   /* Helpers                                                             */
   /* ------------------------------------------------------------------ */
+  // 상세 페이지(예: 공지 글)는 <body data-menu-file="notice.html"> 로 소속 메뉴를 지정
   const currentFile = (
+    document.body.dataset.menuFile ||
     (location.pathname.split('/').pop() || SITE.home) + (location.search || '')
   ).toLowerCase();
 

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공지사항 | KENTECH 전남광주지능화혁신연구센터</title>
+  <meta name="description" content="2027학년도 재직자 석사과정(지능화혁신융합전공) 신입생 모집 및 전공설명회 안내">
+  <link rel="icon" type="image/svg+xml" href="assets/images/kentech_symbol.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=202610280905">
+</head>
+<body data-menu-file="notice.html" data-qr-desc="스마트폰 카메라로 스캔하여 공지사항 페이지를 바로 확인하세요.">
+
+  <div id="site-header"></div>
+
+  <section class="sub-hero" aria-label="페이지 헤더 배너">
+    <div class="hero-glow-orb"></div>
+    <div class="container hero-content">
+      <div class="hero-category">AI INNOVATION CENTER · 센터소식</div>
+      <h1 class="hero-title">공지사항</h1>
+      <p class="hero-desc">2027학년도 재직자 석사과정(지능화혁신융합전공) 신입생 모집 및 전공설명회 안내</p>
+    </div>
+  </section>
+
+  <div id="site-breadcrumb"></div>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="page-content-layout">
+
+        <aside class="lnb-sidebar" id="pageLnb" aria-label="하위 메뉴" hidden>
+          <div class="lnb-header"><h3 id="pageLnbTitle"></h3></div>
+          <nav class="lnb-menu"><ul id="pageLnbList"></ul></nav>
+        </aside>
+
+        <div class="content-primary-col">
+<article>
+<div class="notice-view-head">
+  <h2><span class="board-tag">모집</span>2027학년도 재직자 석사과정(지능화혁신융합전공) 신입생 모집 및 전공설명회 안내</h2>
+  <p class="notice-view-meta">등록일 2026.10.28 · 전남광주지능화혁신연구센터</p>
+</div>
+
+<a class="notice-poster" href="assets/images/notice-2027-master-poster.jpg" target="_blank" rel="noopener" title="포스터 크게 보기">
+  <img src="assets/images/notice-2027-master-poster.jpg" alt="2027학년도 재직자 석사과정 지능화혁신융합전공 신입생 모집 포스터. 전남·광주 중소·중견기업 재직자 대상, 등록금 80~90% 지원, 주 2~3회 야간수업, 전공설명회 2026년 11월 20일(금) 19:00" width="1400" height="1979">
+</a>
+
+<div class="cp-section">
+<p class="cp-lead">한국에너지공과대학교(KENTECH) 지능화혁신융합전공에서 전남·광주 중소·중견기업 재직자를 위한 2027학년도 석사과정 신입생을 모집합니다. 내 업무의 문제를 석사 프로젝트로 해결해 보세요.</p>
+<table class="cp-table"><tbody>
+  <tr><th>모집 대상</th><td>전남·광주 중소·중견기업 재직자</td></tr>
+  <tr><th>지원 자격</th><td>학사학위 소지 재직자, 영어 TOEIC 750 이상</td></tr>
+  <tr><th>과정</th><td>석사과정 4학기 (1학기 AI·데이터 기초 → 2학기 AI 코딩·AX 심화 → 3~4학기 산학 프로젝트)</td></tr>
+  <tr><th>지원 내용</th><td>등록금 80~90% 지원, 주 2~3회 야간수업, AI 코딩·GPU·로봇 실습 지원, 교수·산업체 멘토 공동지도</td></tr>
+  <tr><th>전공설명회</th><td>2026년 11월 20일(금) 19:00 · 온라인 또는 직접 참석</td></tr>
+  <tr><th>문의</th><td>전남광주지능화혁신연구센터 061-320-9285 / kmwoo@kentech.ac.kr</td></tr>
+</tbody></table>
+<div class="notice-actions">
+  <button type="button" class="notice-btn primary" data-open-enroll>전공설명회 참석 신청하기</button>
+  <a class="notice-btn" href="assets/images/notice-2027-master-poster.jpg" target="_blank" rel="noopener">포스터 크게 보기</a>
+</div>
+</div>
+
+<div class="notice-view-foot">
+  <a class="notice-btn" href="notice.html">목록으로</a>
+</div>
+</article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="site-overlays"></div>
+
+  <script src="js/components.js?v=202610280905"></script>
+  <script src="js/main.js?v=202610280905"></script>
+  <script>
+    (function () {
+      var file = document.body.dataset.menuFile;
+      var menu = window.SITE_MENU.find(function (m) {
+        return m.children.some(function (c) { return c.href.toLowerCase() === file; });
+      });
+      if (!menu) return;
+      document.getElementById('pageLnb').hidden = false;
+      document.getElementById('pageLnbTitle').textContent = menu.label;
+      document.getElementById('pageLnbList').innerHTML = menu.children.map(function (c) {
+        var active = c.href.toLowerCase() === file;
+        return '<li class="lnb-item"><a href="' + c.href + '" class="lnb-link' + (active ? ' active' : '') + '"><span>' +
+          c.label.replace(/&/g, '&amp;') + '</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>';
+      }).join('');
+    })();
+  </script>
+</body>
+</html>

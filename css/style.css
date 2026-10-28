@@ -2511,3 +2511,25 @@ a.is-pending {
   .cp-profile { flex-direction: column; text-align: center; padding: 26px 20px; }
   .cp-table th { white-space: normal; }
 }
+/* 공지사항 목록 / 상세 */
+.board-table { width: 100%; border-collapse: collapse; border-top: 2px solid #0f2d59; font-size: 1rem; }
+.board-table th, .board-table td { padding: 15px 12px; border-bottom: 1px solid #e2e8f0; text-align: center; color: #475569; }
+.board-table th { background: #f8fafc; color: #0f2d59; font-weight: 700; }
+.board-table td.title { text-align: left; }
+.board-table td.title a { color: #0f2d59; font-weight: 600; }
+.board-table td.title a:hover { color: #1a56db; text-decoration: underline; }
+.board-tag { display: inline-block; margin-right: 8px; padding: 2px 8px; border-radius: 4px; background: #1a56db; color: #fff; font-size: 0.8125rem; font-weight: 700; vertical-align: 1px; }
+.notice-view-head { border-top: 2px solid #0f2d59; border-bottom: 1px solid #e2e8f0; padding: 22px 4px; margin-bottom: 32px; }
+.notice-view-head h2 { font-size: 1.5rem; font-weight: 800; color: #0f2d59; letter-spacing: -0.02em; line-height: 1.4; }
+.notice-view-meta { margin-top: 8px; color: #64748b; font-size: 0.9375rem; }
+.notice-poster { display: block; max-width: 720px; margin: 0 auto 36px; }
+.notice-poster img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 8px 28px rgba(15, 45, 89, 0.18); }
+.notice-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.notice-btn { display: inline-flex; align-items: center; padding: 12px 22px; border-radius: 8px; font-weight: 700; font-size: 1rem; border: 1px solid #1a56db; color: #1a56db; background: #fff; cursor: pointer; font-family: inherit; }
+.notice-btn.primary { background: #1a56db; color: #fff; }
+.notice-btn:hover { background: #0f2d59; border-color: #0f2d59; color: #fff; }
+.notice-view-foot { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; }
+@media (max-width: 640px) {
+  .board-table .col-hide { display: none; }
+  .notice-view-head h2 { font-size: 1.25rem; }
+}
