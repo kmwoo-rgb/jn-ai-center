@@ -90,7 +90,7 @@ function initPendingLinks() {
   });
 
   document.addEventListener('click', (e) => {
-    const a = e.target.closest('a.is-pending');
+    const a = /** @type {Element} */ (e.target).closest('a.is-pending');
     if (!a) return;
     e.preventDefault();
     showToast('준비 중인 페이지입니다.');
@@ -205,7 +205,7 @@ const QR_LIB_URL = 'https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js';
 let qrLibPromise = null;
 
 function loadQrLib() {
-  if (window.QRCode) return Promise.resolve();
+  if (/** @type {any} */ (window).QRCode) return Promise.resolve();
   if (!qrLibPromise) {
     qrLibPromise = new Promise((resolve, reject) => {
       const s = document.createElement('script');
@@ -235,13 +235,14 @@ function renderQrCode(qrModal) {
         box.appendChild(target);
       }
       target.innerHTML = '';
-      new window.QRCode(target, {
+      const QRCode = /** @type {any} */ (window).QRCode;
+      new QRCode(target, {
         text: window.location.href.split('#')[0],
         width: 180,
         height: 180,
         colorDark: '#0f2d59',
         colorLight: '#ffffff',
-        correctLevel: window.QRCode.CorrectLevel.M,
+        correctLevel: QRCode.CorrectLevel.M,
       });
     })
     .catch(() => {
@@ -272,12 +273,16 @@ const ENROLL_ENDPOINT =
   'https://script.google.com/macros/s/AKfycbyg1vhzzvIjNLYmPwgeKTuBkR3HylWw6UwyU7JN6I6a9TRiJsJhZggU5wtzQAIDhUiOsQ/exec';
 
 function initEnrollForm() {
-  const form = document.getElementById('enrollForm');
+  const form = /** @type {HTMLFormElement | null} */ (document.getElementById('enrollForm'));
   if (!form) return;
 
   const errorEl = document.getElementById('enrollError');
-  const submitBtn = document.getElementById('enrollSubmit');
-  const fields = Array.from(form.querySelectorAll('input, select, textarea')).filter(
+  const submitBtn = /** @type {HTMLButtonElement} */ (document.getElementById('enrollSubmit'));
+  const fields = Array.from(
+    /** @type {NodeListOf<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>} */ (
+      form.querySelectorAll('input, select, textarea')
+    )
+  ).filter(
     (f) => f.type !== 'hidden' && !f.classList.contains('form-honeypot')
   );
 
@@ -417,7 +422,7 @@ function initMobileDrawer() {
    ========================================================================== */
 function initCurriculumTabs() {
   const tabBtns = document.querySelectorAll('.tab-btn');
-  const tabPanels = document.querySelectorAll('.curriculum-panel');
+  const tabPanels = /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll('.curriculum-panel'));
 
   tabBtns.forEach((btn) => {
     btn.addEventListener('click', () => {

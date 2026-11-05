@@ -81,6 +81,7 @@
     ['한국전력공사 (KEPCO)', 'https://www.kepco.co.kr'],
   ];
 
+  /** @type {Array<[string, string, boolean?]>} */
   const FOOTER_LINKS = [
     ['개인정보처리방침', '#privacy', true],
     ['이용약관', '#terms'],
@@ -118,9 +119,10 @@
     if (!PENDING[id] && !READY[id]) PENDING[id] = { label: l[0], category: '' };
     l[1] = pendingHref(l[1]);
   });
-  window.SITE_MENU = MENU;
-  window.SITE_FOOTER_LINKS = FOOTER_LINKS.map(([label, href]) => ({ label, href }));
-  window.SITE_PENDING = PENDING;
+  const site = /** @type {any} */ (window);
+  site.SITE_MENU = MENU;
+  site.SITE_FOOTER_LINKS = FOOTER_LINKS.map(([label, href]) => ({ label, href }));
+  site.SITE_PENDING = PENDING;
 
   /* ------------------------------------------------------------------ */
   /* Helpers                                                             */
@@ -572,7 +574,7 @@ ${
   });
 
   // 패밀리 사이트 이동 (inline onchange 대체)
-  const family = document.getElementById('familySites');
+  const family = /** @type {HTMLSelectElement | null} */ (document.getElementById('familySites'));
   if (family) {
     family.addEventListener('change', () => {
       if (family.value) window.open(family.value, '_blank', 'noopener');
