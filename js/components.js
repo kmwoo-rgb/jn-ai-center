@@ -158,7 +158,8 @@
         <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
       </svg>`;
     // 신청 창(enrollModal)은 renderOverlays 에서 모든 페이지에 넣으므로 현재 페이지에서 바로 연다.
-    const cta = `<button type="button" class="btn-header-cta" id="btnEnrollHeader">${ctaIcon} <span class="cta-label-full">지능화혁신융합전공<br>설명회 참석신청</span><span class="cta-label-short">설명회 신청</span></button>`;
+    // ※ 설명회 참석신청 숨김 처리 중 — 다시 보이려면 style="display:none" 을 지우세요.
+    const cta = `<button type="button" class="btn-header-cta" id="btnEnrollHeader" style="display:none">${ctaIcon} <span class="cta-label-full">지능화혁신융합전공<br>설명회 참석신청</span><span class="cta-label-short">설명회 신청</span></button>`;
 
     const nav = MENU.map(
       (m) => `

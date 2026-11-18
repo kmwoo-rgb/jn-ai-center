@@ -165,7 +165,8 @@ function initModals() {
   });
 
   // 주소 끝에 #apply 를 붙여 들어오면 신청 창을 바로 연다. (예: index.html#apply)
-  if (enrollModal && location.hash === '#apply') openModal(enrollModal);
+  // ※ 설명회 참석신청 숨김 처리 중이라 #apply 자동 열기도 꺼 둠. 다시 쓰려면 아래 주석을 푸세요.
+  // if (enrollModal && location.hash === '#apply') openModal(enrollModal);
 
   // Close buttons inside modals
   document.querySelectorAll('.modal-close-btn').forEach((btn) => {
